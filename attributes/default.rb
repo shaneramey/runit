@@ -60,3 +60,4 @@ when 'gentoo'
   default['runit']['reload'] = '/etc/init.d/runit-start reload'
 
 end
+default['runit']['docker_wait_for_ok'] = false
