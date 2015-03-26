@@ -528,8 +528,9 @@ exec svlogd -tt /var/log/#{new_resource.service_name}"
         end
 
         def inside_docker?
-          results = `cat /proc/1/cgroup`.strip.split("\n")
-          results.any?{|val| /docker/ =~ val}
+          return false
+          # results = `cat /proc/1/cgroup`.strip.split("\n")
+          # results.any?{|val| /docker/ =~ val}
         end
       end
     end
