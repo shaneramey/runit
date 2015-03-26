@@ -179,6 +179,7 @@ class Chef
               sleep 1
               Chef::Log.debug('.')
             end
+            sleep 10
           end
         end
 
