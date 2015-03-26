@@ -167,7 +167,7 @@ class Chef
           Chef::Log.debug("Creating symlink in service_dir for #{new_resource.service_name}")
           service_link.run_action(:create)
          
-          unless inside_docker? and ! node['runit']['docker_wait_for_ok']
+          unless inside_docker? and not node['runit']['docker_wait_for_ok']
             Chef::Log.debug("waiting until named pipe #{service_dir_name}/supervise/ok exists.")
             until ::FileTest.pipe?("#{service_dir_name}/supervise/ok")
               sleep 1
